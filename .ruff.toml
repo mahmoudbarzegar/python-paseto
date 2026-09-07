@@ -1,0 +1,39 @@
+line-length = 120
+target-version = "py311"
+fix = true
+
+exclude = [
+    ".venv",
+    "__pycache__",
+    "uv.lock"
+]
+force-exclude = true
+
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort (import sorting)
+    "D",   # pydocstyle (docstring rules)
+    "N",   # pep8-naming (naming conventions)
+    "DJ",  # flake8-django rules
+    "B",   # flake8-bugbear rules
+    "UP",  # flake8-unused-arguments rules
+    "S",   # flake8-bandit rules
+]
+
+ignore = [
+    # Missing docstrings — not required
+    "D100",  # missing docstring in public module
+    "D101",  # missing docstring in public class
+    "D102",  # missing docstring in public method
+    "D103",  # missing docstring in public function
+    "D104",  # missing docstring in public package
+    "D105",  # missing docstring in magic method
+    "D106",  # missing docstring in public nested class
+    "D107",  # missing docstring in __init__
+]
+
+[lint.pydocstyle]
+convention = "google"
